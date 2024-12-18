@@ -4,7 +4,7 @@ def get_pixel_data(picture, mode = "L"):
     with Image.open(picture) as img:
         picWidth, picHeight = img.size[0], img.size[1]
         img = img.convert(mode)
-        pixelData = [img.getpixel((row, column)) for row in range(picWidth) for column in range(picHeight)]
+        pixelData = [img.getpixel((column, row)) for row in range(picWidth) for column in range(picHeight)]
     return pixelData, picWidth, picHeight
 
 class Picture:
