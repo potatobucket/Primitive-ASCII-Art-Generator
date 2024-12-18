@@ -1,6 +1,5 @@
 import math
 import numpy as np
-from PIL import Image  
 
 def assign_character(value):
     densityMap = "Ñ@#W$9876543210?!abc;:+=-,._ "
