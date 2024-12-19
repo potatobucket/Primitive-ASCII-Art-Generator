@@ -1,11 +1,11 @@
 import math
 import numpy as np
 
-def assign_character(value):
-    #densityMap = "Ñ@#W$9876543210?!abc;:+=-,._ "
+def assign_character(value, mapIndex):
+    densityMap = "Ñ@#W$9876543210?!abc;:+=-,._ "
     #densityMap = "█▓▒░▪▫ "
     #densityMap = "@QB#NgWM8RDHdOKq9$6khEPXwmeZaoS2yjufF]}{tx1zv7lciL/\\|?*>r^;:_\"~,'.-` "
-    densityMap = "█▉▇▓▊▆▅▌▚▞▀▒▐▍▃▖▂░▁▏ "
+    #densityMap = "█▉▇▓▊▆▅▌▚▞▀▒▐▍▃▖▂░▁▏ "
     #densityMap = "◙◘■▩●▦▣◚◛◕▨▧◉▤◐◒▮◍◑▼▪◤▬◗◭◖◈◎◮◊◫▰◄◯□▯▷▫▽◹△◁▸▭◅▵◌▱▹▿◠◃◦◟◞◜ "
     #densityMap = "╬╠╫╋║╉╩┣╦╂╳╇╈┠╚┃╃┻╅┳┡┢┹╀╧┱╙┗┞┇┸┋┯┰┖╲╱┎╘━┭┕┍┅╾│┬┉╰╭╸└┆╺┊─╌┄┈╴╶  "
     #densityMap = "ぽぼゑぜぬあおゆぎゐはせぢがきぱびほげばゟぁたかぞぷれひずどらさでけぉちごえすゎにづぇとょついこぐうぅぃくっしへゞゝ゚゙ "
@@ -20,6 +20,6 @@ def make_string(data, width):
             newString += f"{datum}"
     return newString
 
-if __name__ == "__main__":
-    for i in range(256):
-        print(i, " = ", assign_character(i))
+def create_txt_file(data, width, filename):
+    with open(f"{filename}.txt", "w", encoding = "utf-8") as textFile:
+        textFile.write(make_string(data, width))
