@@ -1,8 +1,8 @@
 import math
 import numpy as np
 
-def assign_character(value, mapIndex):
-    densityMap = "Ñ@#W$9876543210?!abc;:+=-,._ "
+def assign_character(value):
+    densityMap = "Ñ@#W$9876543210?!abc;:+=-…,._ "
     #densityMap = "█▓▒░▪▫ "
     #densityMap = "@QB#NgWM8RDHdOKq9$6khEPXwmeZaoS2yjufF]}{tx1zv7lciL/\\|?*>r^;:_\"~,'.-` "
     #densityMap = "█▉▇▓▊▆▅▌▚▞▀▒▐▍▃▖▂░▁▏ "
