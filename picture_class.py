@@ -28,7 +28,7 @@ class Picture:
         self.fontSize: float = fontSize
         self.fontWidth: float = (self.fontSize / 10.0) * 6
         self.fontHeight: float = (self.fontSize / 10.0) * 8.5
-        self.font: ImageFont = ImageFont.truetype("cour", self.fontSize)
+        self.font: ImageFont = ImageFont.truetype("courbd", self.fontSize)
         self.widthWithFont: int = int(self.width * self.fontWidth)
         self.heightWithFont: int = int(self.height * self.fontHeight)
         self.characterData: list[str] = [ag.assign_character(i) for i in self.data]
@@ -47,7 +47,7 @@ class Picture:
         newImage: Image = Image.new("RGB", (self.widthWithFont, self.heightWithFont), bgColor)
         draw: ImageDraw = ImageDraw.Draw(newImage)
         draw.text((0, 0), self.asciiString, font = self.font, fill = textColor, spacing = 0)
-        newImage = newImage.resize((self.width * 12, self.height * 12))
+        newImage = newImage.resize((self.width * int(self.fontWidth), self.height * int(self.fontWidth)))
         newImage.show()
         if save == True:
             newImage.save(savePath)

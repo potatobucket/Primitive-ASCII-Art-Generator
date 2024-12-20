@@ -10,9 +10,9 @@ def assign_character(value: int | float):
     Assigns an ASCII character roughly translating to the value intensity of black in a pixel.\n
     i.e. a fully black pixel would be Ñ and a fully white pixel would be " " (a space)
     """
-    densityMap: str = "Ñ@#W$9876543210?!abc;:+=-…,._ "
+    densityMap: str = "ÑÑÑÑ@#W$9876543210?!abc;:+=-…,._ "
     #densityMap: str = "█▓▒░▪▫ "
-    #densityMap: str = "@QB#NgWM8RDHdOKq9$6khEPXwmeZaoS2yjufF]}{tx1zv7lciL/\\|?*>r^;:_\"~,'.-` "
+    #densityMap: str = "Ñ@QB#NgWM8RDHdOKq9$6khEPXwmeZaoS2yjufF]}{tx1zv7lciL/\\|?*>r^;:_\"~,'.-` "
     #densityMap: str = "█▉▇▓▊▆▅▌▚▞▀▒▐▍▃▖▂░▁▏ "
     #densityMap: str = "◙◘■▩●▦▣◚◛◕▨▧◉▤◐◒▮◍◑▼▪◤▬◗◭◖◈◎◮◊◫▰◄◯□▯▷▫▽◹△◁▸▭◅▵◌▱▹▿◠◃◦◟◞◜ "
     #densityMap: str = "╬╠╫╋║╉╩┣╦╂╳╇╈┠╚┃╃┻╅┳┡┢┹╀╧┱╙┗┞┇┸┋┯┰┖╲╱┎╘━┭┕┍┅╾│┬┉╰╭╸└┆╺┊─╌┄┈╴╶  "
