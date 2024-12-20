@@ -34,7 +34,7 @@ class Picture:
         self.characterData: list[str] = [ag.assign_character(i) for i in self.data]
         self.asciiString: str = ag.make_string(self.characterData, self.width)
 
-    def make_ascii_image(self, textColor: tuple[int] = (0, 0, 0), bgColor: tuple[int] = (255, 255, 255), save: bool = False, savePath: str = "ascii_image.png"):
+    def make_ascii_image(self, textColor: tuple[int] = (0, 0, 0), bgColor: tuple[int] = (255, 255, 255), save: bool = False, show: bool = False, savePath: str = "ascii_image.png"):
         """
         Creates an ASCII image of the Picture.
 
@@ -48,7 +48,8 @@ class Picture:
         draw: ImageDraw = ImageDraw.Draw(newImage)
         draw.text((0, 0), self.asciiString, font = self.font, fill = textColor, spacing = 0)
         newImage = newImage.resize((self.width * int(self.fontWidth), self.height * int(self.fontWidth)))
-        newImage.show()
+        if show == True:
+            newImage.show()
         if save == True:
             newImage.save(savePath)
         newImage.close()
