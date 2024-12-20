@@ -10,16 +10,16 @@ def get_pixel_data(picture, mode = "L"):
 
 class Picture:
 
-    def __init__(self, image):#, fontSize = 20.0):
+    def __init__(self, image, fontSize = 20.0):
         self.imagePath = image
         with Image.open(image) as img:
             self.data, self.width, self.height = get_pixel_data(image)
-        #self.fontSize = fontSize
-        #self.fontWidth = (self.fontSize / 10.0) * 6
-        #self.fontHeight = (self.fontSize / 10.0) * 8.5
-        self.font = ImageFont.truetype("cour", 20.0)
-        self.widthWithFont = self.width * 12
-        self.heightWithFont = self.height * 17
+        self.fontSize = fontSize
+        self.fontWidth = (self.fontSize / 10.0) * 6
+        self.fontHeight = (self.fontSize / 10.0) * 8.5
+        self.font = ImageFont.truetype("cour", self.fontSize)
+        self.widthWithFont = int(self.width * self.fontWidth)
+        self.heightWithFont = int(self.height * self.fontHeight)
         self.characterData = [ag.assign_character(i) for i in self.data]
         self.asciiString = ag.make_string(self.characterData, self.width)
 
