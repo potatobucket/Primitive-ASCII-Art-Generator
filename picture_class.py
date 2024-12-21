@@ -3,7 +3,17 @@ Holds the Picture class which contains all the logic for automatically generatin
 """
 
 import ascii_generator as ag
-from PIL import Image, ImageFont, ImageDraw
+from PIL import Image, ImageFont, ImageDraw, ImageChops
+
+def add_color(firstImage: str, secondImage: str):
+    """
+    Uses the second image as a mask to add the first image's colors to it.
+    """
+    with Image.open(firstImage) as base:
+        with Image.open(secondImage) as mask:
+            mask = mask.convert("RGB")
+            base = base.convert("RGB").resize(mask.size)
+            ImageChops.add(base, mask).save("test_color.png")
 
 def get_pixel_data(picture: str, mode: str = "L"):
     """
