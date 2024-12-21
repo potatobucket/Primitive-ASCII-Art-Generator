@@ -17,13 +17,13 @@
 Due to the nature of using one ASCII character per pixel in the finished image the final product's dimensions are expanded by a factor of the horizontal size of the character in pixels. For instance, in this case the font is 20 pt. Courier which has a width of twelve pixels making the final product twelve times wider than the original image. This may or may not be fixed in an update.
 
 ### Original
-![A picture I took of a nickel from 1941](example_nickel.png)
+![A picture I took of a nickel from 1941](Examples/example_nickel.png)
 
 ### ASCII approximation
-![The same picture made up of ASCII characters](example_nickel_ascii.png)
+![The same picture made up of ASCII characters](Examples/example_nickel_ascii.png)
 
 ### Colored ASCII (beta)
-![The same picture made up of the same ASCII Characters but this time with the color of the original image overlaid on the text](example_nickel_ascii_color.png)
+![The same picture made up of the same ASCII Characters but this time with the color of the original image overlaid on the text](Examples/example_nickel_ascii_color.png)
 
 ### Raw ASCII string
-See the file [example_ascii_nickel.txt](example_ascii_nickel.txt) (for this example the original picture has been resized to be two hundred pixels wide)
+See the file [example_ascii_nickel.txt](Examples/example_ascii_nickel.txt) (for this example the original picture has been resized to be two hundred pixels wide)
