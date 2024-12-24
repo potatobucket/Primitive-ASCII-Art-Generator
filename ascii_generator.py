@@ -5,7 +5,7 @@ Handles the generation of an ASCII representation of a given picture.
 import math
 import numpy as np
 
-def assign_character(value: int | float):
+def assign_character(value: int | float): #-- possible update: make all of this make sense
     """
     Assigns an ASCII character roughly translating to the value intensity of black in a pixel.\n
     i.e. a fully black pixel would be Ñ and a fully white pixel would be " " (a space)
