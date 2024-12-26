@@ -39,14 +39,31 @@ class Picture:
         self.fontSize: float = fontSize
         self.fontWidth: float = (self.fontSize / 10.0) * 6
         self.fontHeight: float = (self.fontSize / 10.0) * 8.5
-        self.font: ImageFont = ImageFont.truetype("courbd", self.fontSize)
+        self.font: ImageFont = ImageFont.truetype("courbd", self.fontSize, encoding = "utf-8")
         self.widthWithFont: int = int(self.width * self.fontWidth)
         self.heightWithFont: int = int(self.height * self.fontHeight)
         self.characterData: list[str] = [ag.assign_character(i) for i in self.data]
         self.asciiString: str = ag.make_string(self.characterData, self.width)
 
     def make_ascii_image_color(self, bgColor: tuple[int] = (0, 0, 0), save: bool = False, show: bool = False, savePath: str = "ascii_image_color.png"):
-        pass
+
+        with Image.open(self.imagePath) as img:
+            index: int = 0
+            newImage: Image = Image.new("RGB", (int(self.fontWidth) * self.width, int(self.fontHeight) * self.height), bgColor)
+            draw: ImageDraw = ImageDraw.Draw(newImage)
+
+            for i in range(self.height):
+                for j in range(self.width):
+                    draw.text((j * self.fontWidth, i * self.fontHeight), ag.assign_character(self.data[index]), font = self.font, fill = self.pixelColors[j, i])
+                    index += 1
+            
+            newImage = newImage.resize((self.width * int(self.fontWidth), self.height * int(self.fontWidth)))
+
+            if show == True:
+                newImage.show()
+            if save == True:
+                newImage.save(savePath)
+            newImage.close()
 
     def make_ascii_image_monochrome(self, textColor: tuple[int] = (0, 0, 0), bgColor: tuple[int] = (255, 255, 255), save: bool = False, show: bool = False, savePath: str = "ascii_image_monochrome.png"):
         """
