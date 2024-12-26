@@ -35,6 +35,7 @@ class Picture:
         self.imagePath: str = image
         with Image.open(image) as img:
             self.data, self.width, self.height = get_pixel_data(image)
+            self.pixelColors: Image.PixelAccess = img.load()
         self.fontSize: float = fontSize
         self.fontWidth: float = (self.fontSize / 10.0) * 6
         self.fontHeight: float = (self.fontSize / 10.0) * 8.5
@@ -44,7 +45,10 @@ class Picture:
         self.characterData: list[str] = [ag.assign_character(i) for i in self.data]
         self.asciiString: str = ag.make_string(self.characterData, self.width)
 
-    def make_ascii_image(self, textColor: tuple[int] = (0, 0, 0), bgColor: tuple[int] = (255, 255, 255), save: bool = False, show: bool = False, savePath: str = "ascii_image.png"):
+    def make_ascii_image_color(self, bgColor: tuple[int] = (0, 0, 0), save: bool = False, show: bool = False, savePath: str = "ascii_image_color.png"):
+        pass
+
+    def make_ascii_image_monochrome(self, textColor: tuple[int] = (0, 0, 0), bgColor: tuple[int] = (255, 255, 255), save: bool = False, show: bool = False, savePath: str = "ascii_image_monochrome.png"):
         """
         Creates an ASCII image of the Picture.
 
