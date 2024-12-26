@@ -46,6 +46,15 @@ class Picture:
         self.asciiString: str = ag.make_string(self.characterData, self.width)
 
     def make_ascii_image_color(self, bgColor: tuple[int] = (0, 0, 0), save: bool = False, show: bool = False, savePath: str = "ascii_image_color.png"):
+        """
+        Creates a color ASCII image of the Picture.
+
+        Parameters:
+        bgColor: the color of the background as a tuple of (R, G, B) values
+        save: whether or not to save the generated image
+        show: whether or not to show the generated image in your computer's default image viewer
+        savePath: what name to save the generated image as
+        """
 
         with Image.open(self.imagePath) as img:
             index: int = 0
@@ -67,12 +76,13 @@ class Picture:
 
     def make_ascii_image_monochrome(self, textColor: tuple[int] = (0, 0, 0), bgColor: tuple[int] = (255, 255, 255), save: bool = False, show: bool = False, savePath: str = "ascii_image_monochrome.png"):
         """
-        Creates an ASCII image of the Picture.
+        Creates a monochrome ASCII image of the Picture.
 
         Parameters:
         textColor: the color of the text as a tuple of (R, G, B) values
         bgColor: the color of the background as a tuple of (R, G, B) values
         save: whether or not to save the generated image
+        show: whether or not to show the generated image in your computer's default image viewer
         savePath: what name to save the generated image as
         """
         newImage: Image = Image.new("RGB", (self.widthWithFont, self.heightWithFont), bgColor)
