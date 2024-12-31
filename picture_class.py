@@ -34,6 +34,7 @@ class Picture:
     def __init__(self, image: str, fontSize: float = 20.0):
         self.imagePath: str = image
         with Image.open(image) as img:
+            img = img.convert("RGB")
             self.data, self.width, self.height = get_pixel_data(image)
             self.pixelColors: Image.PixelAccess = img.load()
         self.fontSize: float = fontSize
