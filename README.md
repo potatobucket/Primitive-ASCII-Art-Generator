@@ -9,7 +9,7 @@
  
  - [x] Easy to use
  - [x] Minimal boilerplate for end user (might be the same thing as "easy to use")
- - [ ] Makes reasonably-sized .pngs
+ - [x] Makes reasonably-sized .pngs
  - [x] and, most importantly, done.
  
 ---

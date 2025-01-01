@@ -26,6 +26,20 @@ def get_pixel_data(picture: str, mode: str = "L"):
         pixelData: list[int] = [img.getpixel((column, row)) for row in range(picHeight) for column in range(picWidth)]
     return pixelData, picWidth, picHeight
 
+def resize_image(imagePath: str, finalSize: int, fontWidth: int):
+    """
+    WARNING: This overwrites the original picture. If you want to keep a full-size version of your picture make a copy!\n
+    Resizes an image so that when run through the ASCII generator it comes out at the final size.
+    """
+    with Image.open(imagePath) as img:
+        width, height = img.size
+        aspectRatio: float = width / height
+        newWidth: int = int(finalSize / fontWidth)
+        newHeight: int = int((finalSize / aspectRatio) / fontWidth)
+        img = img.resize((int(newWidth), int(newHeight)))
+        img.save(imagePath)
+        return imagePath
+
 class Picture:
     """
     A class to hold a picture and handles all the malarky of turning it into an ASCII image.
