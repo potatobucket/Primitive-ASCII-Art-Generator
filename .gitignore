@@ -176,5 +176,7 @@ pyrightconfig.json
 # Test Stuff
 test*.*
 *.ttf
+Frames to Convert
+Converted Frames
 
 # End of https://www.toptal.com/developers/gitignore/api/python
