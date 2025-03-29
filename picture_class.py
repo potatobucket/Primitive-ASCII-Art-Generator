@@ -45,8 +45,9 @@ class Picture:
     A class to hold a picture and handles all the malarky of turning it into an ASCII image.
     """
 
-    def __init__(self, image: str, fontSize: float = 20.0):
+    def __init__(self, image: str, finalImageSize: int = 1080, fontSize: float = 20.0):
         self.imagePath: str = image
+        resize_image(self.imagePath, finalImageSize, fontSize)
         with Image.open(image) as img:
             img = img.convert("RGB")
             self.data, self.width, self.height = get_pixel_data(image)
