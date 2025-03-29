@@ -14,7 +14,7 @@
  
 ---
 ## Examples
-Due to the nature of using one ASCII character per pixel in the finished image the final product's dimensions are expanded by a factor of the horizontal size of the character in pixels. For instance, in this case the font is 20 pt. Courier which has a width of twelve pixels making the final product twelve times wider than the original image. This may or may not be fixed in an update.
+Note: The original image may be destructively resized so until I can make it where that doesn't happen always use a backup copy of your image.
 
 ### Original
 ![A picture I took of a bird hanging out on a power line](Examples/example_bird.png)
